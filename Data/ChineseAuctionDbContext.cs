@@ -11,24 +11,33 @@ namespace Chinese_Auction.Data
     {
         public ChineseAuctionDbContext(DbContextOptions<ChineseAuctionDbContext> options) : base(options) { }
 
+        public DbSet<Basket> Baskets => Set<Basket>();
         public DbSet<Category> Categories => Set<Category>();
         public DbSet<Donor> Donors => Set<Donor>();
         public DbSet<User> Users => Set<User>();
         public DbSet<Gift> Gifts => Set<Gift>();
+        public DbSet<Package> Packages => Set<Package>();
         public DbSet<Purchase> Purchases => Set<Purchase>();
+        public DbSet<Winner> Winners => Set<Winner>();
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // מפות שמות הטבלאות במסד הנתונים
+            modelBuilder.Entity<Basket>().ToTable("Basket");
             modelBuilder.Entity<Category>().ToTable("Categories");
-            modelBuilder.Entity<Donor>().ToTable("Donors");
-            modelBuilder.Entity<User>().ToTable("Users");
+            modelBuilder.Entity<Donor>().ToTable("Donors").HasIndex(u => u.Email).IsUnique();
+            modelBuilder.Entity<User>().ToTable("Users").HasIndex(u => u.Email).IsUnique(); 
             modelBuilder.Entity<Gift>().ToTable("Gifts");
+            modelBuilder.Entity<Package>().ToTable("Package");
             modelBuilder.Entity<Purchase>().ToTable("Purchases");
-
+            modelBuilder.Entity<Winner>().ToTable("Winner");
             base.OnModelCreating(modelBuilder);
-        }
+
+                
+        
+    }
 
     }
 }

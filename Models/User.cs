@@ -24,6 +24,8 @@ namespace Chinese_Auction.Models
         public Role Role { get; set; } = Role.Customer;
         
         public ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
+        public ICollection<Basket> Baskets { get; set; } = new List<Basket>();
+
 
     }
 }
