@@ -15,7 +15,7 @@ namespace Chinese_Auction.Dto_s
         [Required]
         public int Package_Id { get; set; }
         [Required]
-        public string Unique_Package_Id { get; set; }
+        public string Unique_Package_Id { get; set; } = string.Empty;
 
     }
 
@@ -28,6 +28,15 @@ namespace Chinese_Auction.Dto_s
         public int Package_Id { get; set; }
 
         [Required]
-        public string Unique_Package_Id { get; set; }
+        public string Unique_Package_Id { get; set; } = string.Empty;
+
+        [Required]
+        public bool Is_Won { get; set; } = false;
+    }
+
+    public class UpdatePurchaseDto
+    {
+        [Required]
+        public bool Is_Won { get; set; } = false;
     }
 }

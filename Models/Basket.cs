@@ -12,7 +12,7 @@ namespace Chinese_Auction.Models
         public int Gift_Id { get; set; }
 
         [Required, ForeignKey("Gift_Id")]
-        public Gift Gift { get; set; }
+        public Gift? Gift { get; set; } = null;
 
         public int Cards_quantity { get; set; }
 
@@ -20,13 +20,13 @@ namespace Chinese_Auction.Models
         public int User_Id { get; set; }
 
         [Required, ForeignKey("User_Id")]
-        public User User { get; set; }
+        public User? User { get; set; } = null;
 
         [Required]
         public int Package_Id { get; set; }
         [Required, ForeignKey("Package_Id")]
-        public Package Package { get; set; }
-        public string UniquePackageId { get; set; }
+        public Package? Package { get; set; } = null;
+        public string Unique_Package_Id { get; set; } = string.Empty;
 
     }
 }

@@ -340,3 +340,6 @@ C:\Users\User\Desktop\Web-Api-Project\Chinese_Auction\Chinese_Auction\obj\Debug\
 C:\Users\User\Desktop\Web-Api-Project\Chinese_Auction\Chinese_Auction\obj\Debug\net8.0\Chinese_Auction.pdb
 C:\Users\User\Desktop\Web-Api-Project\Chinese_Auction\Chinese_Auction\obj\Debug\net8.0\Chinese_Auction.genruntimeconfig.cache
 C:\Users\User\Desktop\Web-Api-Project\Chinese_Auction\Chinese_Auction\obj\Debug\net8.0\ref\Chinese_Auction.dll
+C:\Users\User\Desktop\Web-Api-Project\Chinese_Auction\Chinese_Auction\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\User\Desktop\Web-Api-Project\Chinese_Auction\Chinese_Auction\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User\Desktop\Web-Api-Project\Chinese_Auction\Chinese_Auction\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

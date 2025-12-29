@@ -18,7 +18,7 @@ namespace Chinese_Auction.Dto_s
         public int Package_Id { get; set; }
 
         [Required]
-        public string Unique_Package_Id { get; set; }
+        public string Unique_Package_Id { get; set; } = string.Empty;
     }
 
     public class GetBasketDto
@@ -32,6 +32,6 @@ namespace Chinese_Auction.Dto_s
         public int Package_Id { get; set; }
 
         [Required]
-        public string Unique_Package_Id { get; set; }
+        public string Unique_Package_Id { get; set; } = string.Empty;
     }
 }

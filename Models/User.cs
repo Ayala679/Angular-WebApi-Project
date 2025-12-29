@@ -12,13 +12,13 @@ namespace Chinese_Auction.Models
     {
         public int Id { get; set; }
         [Required,EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
         [Required, MinLength(8), MaxLength(20)]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
         [Required,MaxLength(30)]
-        public string First_name { get; set; }
+        public string First_name { get; set; } = string.Empty;
         [Required,MaxLength(30)]
-        public string Last_name { get; set; }
+        public string Last_name { get; set; } = string.Empty;
         public string? Phone { get; set; }
         [Required]
         public Role Role { get; set; } = Role.Customer;

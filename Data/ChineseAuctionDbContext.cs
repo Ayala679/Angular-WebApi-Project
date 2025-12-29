@@ -18,7 +18,6 @@ namespace Chinese_Auction.Data
         public DbSet<Gift> Gifts => Set<Gift>();
         public DbSet<Package> Packages => Set<Package>();
         public DbSet<Purchase> Purchases => Set<Purchase>();
-        public DbSet<Winner> Winners => Set<Winner>();
 
 
 
@@ -26,13 +25,12 @@ namespace Chinese_Auction.Data
         {
             // מפות שמות הטבלאות במסד הנתונים
             modelBuilder.Entity<Basket>().ToTable("Basket");
-            modelBuilder.Entity<Category>().ToTable("Categories");
+            modelBuilder.Entity<Category>().ToTable("Categories").HasIndex(u => u.Name).IsUnique();
             modelBuilder.Entity<Donor>().ToTable("Donors").HasIndex(u => u.Email).IsUnique();
             modelBuilder.Entity<User>().ToTable("Users").HasIndex(u => u.Email).IsUnique(); 
             modelBuilder.Entity<Gift>().ToTable("Gifts");
             modelBuilder.Entity<Package>().ToTable("Package");
             modelBuilder.Entity<Purchase>().ToTable("Purchases");
-            modelBuilder.Entity<Winner>().ToTable("Winner");
             base.OnModelCreating(modelBuilder);
 
                 

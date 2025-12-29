@@ -3,16 +3,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Chinese_Auction.Dto_s
 {
-    public class DonorDto
+    public class CreateDonorDto
     {
         [Required, EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
         [Required, MinLength(8), MaxLength(20)]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
         [Required, MaxLength(30)]
-        public string First_name { get; set; }
+        public string First_name { get; set; } = string.Empty;
         [Required, MaxLength(30)]
-        public string Last_name { get; set; }
+        public string Last_name { get; set; } = string.Empty;
         public string? Phone { get; set; }
         [MaxLength(50)]
         public string? Company_name { get; set; }
@@ -22,7 +22,7 @@ namespace Chinese_Auction.Dto_s
         public bool Is_publish { get; set; } = false;
     }
 
-    public class UserGetDonor
+    public class UserGetDonorDto
     {
         public string? Company_name { get; set; }
         public string? Company_description { get; set; }
@@ -31,16 +31,16 @@ namespace Chinese_Auction.Dto_s
         public bool Is_publish { get; set; } = false;
     }
 
-    public class ManagerGetDto
+    public class ManagerGetDonorDto
     {
         [Required, EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required, MaxLength(30)]
-        public string First_name { get; set; }
+        public string First_name { get; set; } = string.Empty;
 
         [Required, MaxLength(30)]
-        public string Last_name { get; set; }
+        public string Last_name { get; set; } = string.Empty;
         public string? Phone { get; set; }
         [MaxLength(50)]
         public string? Company_name { get; set; }

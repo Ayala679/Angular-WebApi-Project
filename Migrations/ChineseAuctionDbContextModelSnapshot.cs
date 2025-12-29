@@ -39,7 +39,7 @@ namespace Chinese_Auction.Migrations
                     b.Property<int>("Package_Id")
                         .HasColumnType("int");
 
-                    b.Property<string>("UniquePackageId")
+                    b.Property<string>("Unique_Package_Id")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -67,9 +67,12 @@ namespace Chinese_Auction.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Categories", (string)null);
                 });
@@ -195,10 +198,6 @@ namespace Chinese_Auction.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<string>("Unique_Package_Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Package", (string)null);
@@ -214,6 +213,9 @@ namespace Chinese_Auction.Migrations
 
                     b.Property<int>("Gift_Id")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Is_Won")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Package_Id")
                         .HasColumnType("int");
@@ -280,29 +282,6 @@ namespace Chinese_Auction.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("Chinese_Auction.Models.Winner", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Gift_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("User_Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Gift_Id");
-
-                    b.HasIndex("User_Id");
-
-                    b.ToTable("Winner", (string)null);
-                });
-
             modelBuilder.Entity("Chinese_Auction.Models.Basket", b =>
                 {
                     b.HasOne("Chinese_Auction.Models.Gift", "Gift")
@@ -333,7 +312,7 @@ namespace Chinese_Auction.Migrations
             modelBuilder.Entity("Chinese_Auction.Models.Gift", b =>
                 {
                     b.HasOne("Chinese_Auction.Models.Category", "Category")
-                        .WithMany()
+                        .WithMany("Gifts")
                         .HasForeignKey("Category_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -376,23 +355,9 @@ namespace Chinese_Auction.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Chinese_Auction.Models.Winner", b =>
+            modelBuilder.Entity("Chinese_Auction.Models.Category", b =>
                 {
-                    b.HasOne("Chinese_Auction.Models.Gift", "Gift")
-                        .WithMany()
-                        .HasForeignKey("Gift_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Chinese_Auction.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("User_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Gift");
-
-                    b.Navigation("User");
+                    b.Navigation("Gifts");
                 });
 
             modelBuilder.Entity("Chinese_Auction.Models.Donor", b =>

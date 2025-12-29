@@ -9,30 +9,29 @@ namespace Chinese_Auction.Models
         [Required]
         public int Id { get; set; }
         [Required,MaxLength(30)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
         [Required, MaxLength(100)]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
         public string? Details { get; set; }
 
         [Required]
-        public string picture { get; set; }
+        public string picture { get; set; } = string.Empty;
         public int Purchase_quantity { get; set; } = 0;
 
         [Required]
         public int Donor_Id { get; set; }
 
         [Required, ForeignKey("Donor_Id")]
-        public Donor Donor { get; set; }
+        public Donor? Donor { get; set; } = null;
 
         [Required]
         public int Category_Id { get; set; }
 
-        [Required,ForeignKey("Category_Id")]
-        public Category Category { get; set; }
+        [Required, ForeignKey("Category_Id")]
+        public Category? Category { get; set; } = null;
 
         public ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
 
-        public bool isLottery { get; set; }
-
+        public bool isLottery { get; set; } = false;
     }
 }
