@@ -22,15 +22,11 @@ namespace Chinese_Auction.Controllers
             try
             {
                 var categories = await _categoryService.GetAllCategoriesAsync();
-                if (categories == null || !categories.Any())
-                {
-                    return NotFound("No categories found.");
-                }
                 return Ok(categories);
             }
             catch (Exception ex) {
                 //log the exception here
-                return BadRequest("Internal server error ocuured");
+                return BadRequest("Internal server error ocuured"+ex.Message);
             }
             
 
@@ -41,13 +37,13 @@ namespace Chinese_Auction.Controllers
             try
             {
                 var category = await _categoryService.GetCategoryByIdAsync(id);
-                if (category == null) return NotFound("category with categoryId was not found");
+                if (category == null) return NotFound("category with the given ID was not found");
                 return Ok(category);
             }
             catch (Exception ex)
             {
                 //log the exception here
-                return BadRequest("Internal server error ocuured");
+                return BadRequest("Internal server error ocuured"+ex.Message);
             }
 
         }
@@ -62,7 +58,6 @@ namespace Chinese_Auction.Controllers
             }
             catch (Exception ex)
             {
-                //log the exception here
                 return BadRequest(ex.Message);
             }
 
@@ -93,17 +88,16 @@ namespace Chinese_Auction.Controllers
             try
             {
                 var isDeleted = await _categoryService.DeleteCategoryAsync(id);
-                if (!isDeleted) return NotFound("category with id categoryId was not found");
+                if (!isDeleted) return NotFound("category with the given ID was not found");
                 return Ok("deleted succesfully");
 
             }
             catch (Exception ex)
             {
                 //log the exception here
-                return BadRequest("Internal server error ocuured");
+                return BadRequest("Internal server error ocuured" + ex.Message);
             }
 
-            return NoContent();
         }
 
 

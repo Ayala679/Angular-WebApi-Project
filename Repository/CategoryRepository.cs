@@ -26,12 +26,14 @@ namespace Chinese_Auction.Repository
                 .FindAsync(id);
         }
 
+        //manager only
         public async Task CreateCategoryAsync(Category category)
         {
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
         }
 
+        //manager only
         public async Task<Category?> UpdateCategoryAsync(Category category)
         {
             var existing = await _context.Categories.FindAsync(category.Id);
@@ -43,6 +45,7 @@ namespace Chinese_Auction.Repository
             return existing;
         }
 
+        //manager only
         public async Task DeleteCategoryAsync(int id)
         {
             var category = await _context.Categories.FindAsync(id);

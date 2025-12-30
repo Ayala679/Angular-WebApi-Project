@@ -77,5 +77,273 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.DonorController",
+    "Method": "GetAllDonors",
+    "RelativePath": "api/Donor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.DonorController",
+    "Method": "CreateDonor",
+    "RelativePath": "api/Donor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "donor",
+        "Type": "Chinese_Auction.Dto_s.CreateDonorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.DonorController",
+    "Method": "GetDonorById",
+    "RelativePath": "api/Donor/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.DonorController",
+    "Method": "UpdateDonor",
+    "RelativePath": "api/Donor/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "donor",
+        "Type": "Chinese_Auction.Dto_s.CreateDonorDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.DonorController",
+    "Method": "DeleteDonor",
+    "RelativePath": "api/Donor/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.GiftController",
+    "Method": "GetAllGifts",
+    "RelativePath": "api/Gift",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.GiftController",
+    "Method": "CreateGiftAsync",
+    "RelativePath": "api/Gift",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gift",
+        "Type": "Chinese_Auction.Dto_s.GiftDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.GiftController",
+    "Method": "GetGiftByIdAsyncet",
+    "RelativePath": "api/Gift/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.GiftController",
+    "Method": "UpdateGiftAsync",
+    "RelativePath": "api/Gift/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gift",
+        "Type": "Chinese_Auction.Dto_s.GiftDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.GiftController",
+    "Method": "DeleteGiftAsync",
+    "RelativePath": "api/Gift/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.GiftController",
+    "Method": "UpdateGiftPurchasesQuantityAsync",
+    "RelativePath": "api/Gift/purchase-quantity",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "giftPurchase",
+        "Type": "Chinese_Auction.Dto_s.UpdateGiftDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.GiftController",
+    "Method": "GetUnApprovedGiftsAsync",
+    "RelativePath": "api/Gift/un-approved",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.PackageController",
+    "Method": "GetAllPackages",
+    "RelativePath": "api/Package",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.PackageController",
+    "Method": "CreatePackage",
+    "RelativePath": "api/Package",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createPackageDto",
+        "Type": "Chinese_Auction.Dto_s.CreatePackageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.PackageController",
+    "Method": "GetPackageById",
+    "RelativePath": "api/Package/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.PackageController",
+    "Method": "UpdatePackage",
+    "RelativePath": "api/Package/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatePackageDto",
+        "Type": "Chinese_Auction.Dto_s.CreatePackageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Chinese_Auction.Controllers.PackageController",
+    "Method": "DeletePackage",
+    "RelativePath": "api/Package/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

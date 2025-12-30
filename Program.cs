@@ -20,10 +20,16 @@ builder.Services.AddDbContext<ChineseAuctionDbContext>(options =>
 
 //scoped for repositories
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IPackageRepository, PackageRepository>();
+builder.Services.AddScoped<IDonorRepository, DonorRepository>();
+builder.Services.AddScoped<IGiftRepository, GiftRepository>();
+
 
 //scoped for services
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-
+builder.Services.AddScoped<IPackageService, PackageService>();
+builder.Services.AddScoped<IDonorService, DonorService>();
+builder.Services.AddScoped<IGiftService, GiftService>();
 
 var app = builder.Build();
 

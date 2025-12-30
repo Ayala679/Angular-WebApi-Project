@@ -33,5 +33,7 @@ namespace Chinese_Auction.Models
         public ICollection<Purchase> Purchases { get; set; } = new List<Purchase>();
 
         public bool isLottery { get; set; } = false;
+
+        public bool IsApproved { get; set; } = false;
     }
 }

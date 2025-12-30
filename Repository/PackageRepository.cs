@@ -12,6 +12,7 @@ namespace Chinese_Auction.Repository
             _context = context;
         }
 
+
         public async Task<IEnumerable<Package>> GetAllPackagesAsync()
         {
             return await _context.Packages.ToListAsync();
@@ -21,12 +22,16 @@ namespace Chinese_Auction.Repository
         {
             return await _context.Packages.FindAsync(id);
         }
+
+        //manager only
         public async Task CreatePackageAsync(Package package)
         {
             _context.Packages.Add(package);
             await _context.SaveChangesAsync();
         }
 
+
+        //manager only
         public async Task<Package?> UpdatePackageAsync(Package package)
         {
             var existing = await _context.Packages.FindAsync(package.Id);
@@ -37,6 +42,7 @@ namespace Chinese_Auction.Repository
 
         }
 
+        //manager only
         public async Task DeletePackageAsync(int id)
         {
             var package = await _context.Packages.FindAsync(id);
